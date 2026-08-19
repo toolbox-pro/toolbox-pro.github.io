@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Específico para el Generador de Contraseñas -->
+    <title>Generador de Contraseñas Seguras y Aleatorias | ToolBox Pro</title>
+    <meta name="description" content="Genera claves aleatorias, fuertes e indescifrables online gratis. Crea contraseñas criptográficas seguras directamente en tu navegador sin registro.">
+    <meta name="keywords" content="generador de contraseñas seguras, crear claves aleatorias, generar password fuerte, seguridad digital">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://toolbox-pro.github.io/generador-contrasenas/">
+    <meta name="theme-color" content="#0b0f19">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #080c14;
+            --bg-card: #111827;
+            --bg-input: #1f293d;
+            --primary: #6366f1;
+            --accent: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+        
+        header { 
+            background: rgba(17, 24, 39, 0.8); 
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color); 
+            padding: 30px 20px; 
+            text-align: center;
+        }
+        h1.logo { font-size: 2rem; font-weight: 800; color: #fff; }
+        h1.logo span { background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+
+        main.container { max-width: 900px; margin: 0 auto; padding: 30px 20px; flex: 1; width: 100%; }
+
+        .nav-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+        .tab-btn { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            color: var(--text-muted); 
+            padding: 10px 18px; 
+            border-radius: var(--radius-md); 
+            font-weight: 600; 
+            text-decoration: none;
+            font-size: 0.9rem; 
+        }
+        .tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .tool-panel { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 35px; box-shadow: var(--shadow); }
+        .tool-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .tool-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        input[type="text"] { width: 100%; padding: 13px; background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; font-family: var(--font-mono); }
+
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 15px 0; }
+        .checkbox-label { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 0.9rem; cursor: pointer; }
+        .checkbox-label input { accent-color: var(--primary); width: 18px; height: 18px; }
+
+        .strength-meter { height: 6px; width: 100%; background: #1e293b; border-radius: 4px; margin-top: 10px; overflow: hidden; }
+        .strength-bar { height: 100%; width: 50%; background: var(--accent); transition: all 0.3s ease; }
+
+        .btn { 
+            background: var(--primary); color: #fff; border: none; padding: 14px 28px; border-radius: var(--radius-md); 
+            font-weight: 700; font-size: 0.98rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 100%; text-decoration: none;
+        }
+        .btn-success { background: var(--accent); }
+
+        .preview-box { margin-top: 25px; padding: 22px; background: var(--bg-body); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center; }
+
+        footer { background: #080c14; border-top: 1px solid var(--border-color); padding: 25px 20px; text-align: center; font-size: 0.88rem; color: var(--text-muted); margin-top: 40px; }
+        footer a { color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../" class="logo" style="text-decoration:none;"><h1>🛠️ ToolBox<span>Pro</span></h1></a>
+    <p>Generador de Contraseñas Seguras y Criptográficas</p>
+</header>
+
+<main class="container">
+
+    <nav class="nav-tabs">
+        <a href="../" class="tab-btn">🏠 Inicio</a>
+        <a href="../compresor-webp/" class="tab-btn">🖼️ Compresor WebP</a>
+        <a href="../generador-qr/" class="tab-btn">📱 Creador QR</a>
+        <a href="./" class="tab-btn active">🔐 Contraseñas</a>
+    </nav>
+
+    <section class="tool-panel">
+        <h2 class="tool-title">Generador de Contraseñas Seguras</h2>
+        <p class="tool-desc">Crea claves aleatorias e indescifrables procesadas localmente en tu navegador.</p>
+
+        <div class="form-group">
+            <label for="passLength">Longitud: <span id="passLengthVal">16</span> caracteres</label>
+            <input type="range" id="passLength" min="8" max="64" value="16" style="width:100%;" oninput="document.getElementById('passLengthVal').innerText = this.value; updateStrength();">
+        </div>
+
+        <div class="checkbox-grid">
+            <label class="checkbox-label"><input type="checkbox" id="chkUpper" checked onchange="updateStrength()"> Mayúsculas (A-Z)</label>
+            <label class="checkbox-label"><input type="checkbox" id="chkLower" checked onchange="updateStrength()"> Minúsculas (a-z)</label>
+            <label class="checkbox-label"><input type="checkbox" id="chkNum" checked onchange="updateStrength()"> Números (0-9)</label>
+            <label class="checkbox-label"><input type="checkbox" id="chkSym" checked onchange="updateStrength()"> Símbolos (!@#$%)</label>
+        </div>
+
+        <div class="form-group">
+            <label>Nivel de Seguridad Estimado</label>
+            <div class="strength-meter"><div id="strengthBar" class="strength-bar"></div></div>
+        </div>
+
+        <button class="btn" onclick="generatePassword()">🔐 Generar Clave Segura</button>
+
+        <div id="passResult" class="preview-box" style="display: none;">
+            <input type="text" id="passOutput" readonly style="text-align: center; font-size: 1.2rem; font-weight: bold; letter-spacing: 2px;">
+            <button class="btn btn-success" onclick="copyPassword()" style="margin-top: 15px;">📋 Copiar al Portapapeles</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 ToolBox Pro. Herramientas Web Gratuitas.</p>
+</footer>
+
+<script>
+    function updateStrength() {
+        const length = document.getElementById('passLength').value;
+        let score = 0;
+        if(document.getElementById('chkUpper').checked) score++;
+        if(document.getElementById('chkLower').checked) score++;
+        if(document.getElementById('chkNum').checked) score++;
+        if(document.getElementById('chkSym').checked) score++;
+
+        const bar = document.getElementById('strengthBar');
+        let width = (length / 64) * 50 + (score * 12.5);
+        bar.style.width = Math.min(100, width) + '%';
+
+        if(score <= 1 || length < 10) bar.style.backgroundColor = '#ef4444';
+        else if(score === 2 || length < 14) bar.style.backgroundColor = '#f59e0b';
+        else bar.style.backgroundColor = '#10b981';
+    }
+
+    function generatePassword() {
+        const length = document.getElementById('passLength').value;
+        const useUpper = document.getElementById('chkUpper').checked;
+        const useLower = document.getElementById('chkLower').checked;
+        const useNum = document.getElementById('chkNum').checked;
+        const useSym = document.getElementById('chkSym').checked;
+
+        let charset = "";
+        if (useUpper) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (useLower) charset += "abcdefghijklmnopqrstuvwxyz";
+        if (useNum) charset += "0123456789";
+        if (useSym) charset += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+        if (!charset) {
+            alert("Selecciona al menos un tipo de caracteres.");
+            return;
+        }
+
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        document.getElementById('passOutput').value = password;
+        document.getElementById('passResult').style.display = 'block';
+        updateStrength();
+    }
+
+    function copyPassword() {
+        const passOutput = document.getElementById('passOutput');
+        navigator.clipboard.writeText(passOutput.value).then(() => {
+            alert("¡Contraseña copiada!");
+        });
+    }
+</script>
+
+</body>
+</html>
