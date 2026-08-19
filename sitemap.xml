@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://toolbox-pro.github.io/</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://toolbox-pro.github.io/compresor-webp/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://toolbox-pro.github.io/generador-qr/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://toolbox-pro.github.io/generador-contrasenas/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://toolbox-pro.github.io/contador-texto/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://toolbox-pro.github.io/validador-json/</loc>
+    <priority>0.80</priority>
   </url>
 </urlset>
