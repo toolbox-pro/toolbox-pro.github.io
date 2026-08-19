@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Específico para el Compresor -->
+    <title>Compresor de Imágenes WebP Gratis y Convertidor | ToolBox Pro</title>
+    <meta name="description" content="Comprime y convierte tus imágenes JPG y PNG a WebP online gratis sin registros. Optimiza la velocidad de tu web procesando tus fotos 100% en tu navegador.">
+    <meta name="keywords" content="compresor de imagenes webp, convertir jpg a webp, reducir tamaño de imagen, optimizar fotos seo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://toolbox-pro.github.io/compresor-webp/">
+    <meta name="theme-color" content="#0b0f19">
+    
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolbox-pro.github.io/compresor-webp/">
+    <meta property="og:title" content="Compresor de Imágenes WebP Gratis | ToolBox Pro">
+    <meta property="og:description" content="Reduce el tamaño de tus fotos en segundos sin perder calidad. Procesamiento privado en tu navegador.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Schema.org específico -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Compresor de Imágenes WebP",
+      "url": "https://toolbox-pro.github.io/compresor-webp/",
+      "description": "Optimiza y reduce el tamaño de tus archivos fotográficos al instante directamente en tu navegador.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #080c14;
+            --bg-card: #111827;
+            --bg-input: #1f293d;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --primary-glow: rgba(99, 102, 241, 0.25);
+            --accent: #10b981;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+        }
+        
+        header { 
+            background: rgba(17, 24, 39, 0.8); 
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color); 
+            padding: 30px 20px; 
+            text-align: center;
+        }
+        h1.logo { font-size: 2rem; font-weight: 800; color: #fff; text-decoration: none; }
+        h1.logo span { background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 6px; }
+
+        main.container { max-width: 900px; margin: 0 auto; padding: 30px 20px; flex: 1; width: 100%; }
+
+        .nav-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+        .tab-btn { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-color); 
+            color: var(--text-muted); 
+            padding: 10px 18px; 
+            border-radius: var(--radius-md); 
+            font-weight: 600; 
+            text-decoration: none;
+            font-size: 0.9rem; 
+        }
+        .tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        .tool-panel { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 35px; box-shadow: var(--shadow); }
+        .tool-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .tool-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
+
+        .drop-zone { border: 2px dashed #374151; border-radius: var(--radius-md); padding: 40px 20px; text-align: center; cursor: pointer; background: rgba(255,255,255,0.01); }
+        .drop-zone:hover { border-color: var(--primary); }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        select, input[type="range"] { width: 100%; padding: 12px; background: var(--bg-input); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; }
+
+        .btn { 
+            background: var(--primary); color: #fff; border: none; padding: 14px 28px; border-radius: var(--radius-md); 
+            font-weight: 700; font-size: 0.98rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 100%; text-decoration: none;
+        }
+        .btn-success { background: var(--accent); }
+
+        .preview-box { margin-top: 25px; padding: 22px; background: var(--bg-body); border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 20px; }
+        .stat-card { background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); text-align: center; }
+        .stat-num { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+
+        footer { background: #080c14; border-top: 1px solid var(--border-color); padding: 25px 20px; text-align: center; font-size: 0.88rem; color: var(--text-muted); margin-top: 40px; }
+        footer a { color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../" class="logo" style="text-decoration:none;"><h1>🛠️ ToolBox<span>Pro</span></h1></a>
+    <p>Compresor y Convertidor de Imágenes WebP Gratuito</p>
+</header>
+
+<main class="container">
+
+    <!-- Navegación simple de regreso -->
+    <nav class="nav-tabs">
+        <a href="../" class="tab-btn">🏠 Inicio</a>
+        <a href="./" class="tab-btn active">🖼️ Compresor WebP</a>
+    </nav>
+
+    <section class="tool-panel">
+        <h2 class="tool-title">Compresor y Convertidor de Imágenes</h2>
+        <p class="tool-desc">Reduce el peso de tus imágenes en formato WebP, JPG o PNG directamente en tu navegador sin enviar datos a ningún servidor.</p>
+
+        <div class="drop-zone" onclick="document.getElementById('imageInput').click()">
+            <p id="dropZoneText">📁 Haz clic aquí o arrastra tu imagen (JPG, PNG, WEBP)</p>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+        </div>
+
+        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div class="form-group">
+                <label for="formatSelect">Formato de Salida</label>
+                <select id="formatSelect">
+                    <option value="image/webp">WEBP (Recomendado para Google SEO)</option>
+                    <option value="image/jpeg">JPG / JPEG (Fotografías)</option>
+                    <option value="image/png">PNG (Transparencias)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="qualityInput">Nivel de Calidad: <span id="qualityVal">80</span>%</label>
+                <input type="range" id="qualityInput" min="10" max="100" value="80" oninput="document.getElementById('qualityVal').innerText = this.value">
+            </div>
+        </div>
+
+        <button class="btn" onclick="processImage()">⚡ Comprimir e Imagen</button>
+
+        <div id="imageResult" class="preview-box" style="display: none;">
+            <h3>¡Imagen Optimizada con Éxito!</h3>
+            <div style="margin: 15px 0;">
+                <img id="imgPreview" style="max-width: 100%; max-height: 220px; border-radius: 8px;">
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num" id="originalSize">0 KB</div>
+                    <div>Original</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" id="compressedSize">0 KB</div>
+                    <div>Optimizado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" id="savedPercentage" style="color: var(--accent);">0%</div>
+                    <div>Ahorro</div>
+                </div>
+            </div>
+            <a id="downloadImgBtn" class="btn btn-success" style="margin-top: 20px;">⬇️ Descargar Imagen</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 ToolBox Pro. Herramientas Web Gratuitas.</p>
+</footer>
+
+<script>
+    let selectedFile = null;
+    document.getElementById('imageInput').addEventListener('change', (e) => {
+        selectedFile = e.target.files[0];
+        if(selectedFile) {
+            document.getElementById('dropZoneText').innerText = `📄 Imagen cargada: ${selectedFile.name}`;
+        }
+    });
+
+    function processImage() {
+        if (!selectedFile) {
+            alert("Por favor selecciona una imagen primero.");
+            return;
+        }
+
+        const format = document.getElementById('formatSelect').value;
+        const quality = parseFloat(document.getElementById('qualityInput').value) / 100;
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                canvas.toBlob((blob) => {
+                    const url = URL.createObjectURL(blob);
+                    const downloadBtn = document.getElementById('downloadImgBtn');
+                    const extension = format.split('/')[1];
+                    downloadBtn.href = url;
+                    downloadBtn.download = `optimizada_${selectedFile.name.split('.')[0]}.${extension}`;
+                    
+                    document.getElementById('imgPreview').src = url;
+                    const origKb = (selectedFile.size / 1024);
+                    const compKb = (blob.size / 1024);
+                    const saved = Math.max(0, ((origKb - compKb) / origKb) * 100);
+
+                    document.getElementById('originalSize').innerText = origKb.toFixed(1) + " KB";
+                    document.getElementById('compressedSize').innerText = compKb.toFixed(1) + " KB";
+                    document.getElementById('savedPercentage').innerText = saved.toFixed(0) + "%";
+                    
+                    document.getElementById('imageResult').style.display = 'block';
+                }, format, quality);
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(selectedFile);
+    }
+</script>
+
+</body>
+</html>
+
